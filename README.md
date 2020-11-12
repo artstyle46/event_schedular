@@ -12,10 +12,11 @@ Database relations and schema
           
 2. Table Name: Trigger
   fields: 1. id
-          2. date
+          2. field_id
           3. time
           4. period
-          5. date_offset
+          5. offset_type
+          6. date_offset
  
  3. Table Name: Contact
    user model from django
