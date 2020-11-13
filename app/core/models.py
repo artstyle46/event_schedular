@@ -10,13 +10,11 @@ class User(AbstractUser):
 class Field(models.Model):
     STRING = "string"
     DATE = "date"
-    FIELD_TYPE = (
-        (STRING, "string"),
-        (DATE, "date")
-    )
+    FIELD_TYPE = ((STRING, "string"), (DATE, "date"))
 
     field_type = models.CharField(choices=FIELD_TYPE, max_length=255)
     field_name = models.CharField(max_length=255)
+    is_active = models.BooleanField(default=True)
 
 
 class FieldValue(models.Model):
@@ -51,9 +49,11 @@ class ScheduleView(models.Model):
 
     timestamp = models.PositiveIntegerField()
     trigger_id = models.CharField(max_length=255)
-    field_id = models.CharField(max_length=255)
+    fieldvalue_id = models.CharField(max_length=255)
 
     class Meta:
         indexes = [
-            models.Index(fields=['-timestamp']),
+            models.Index(fields=["-timestamp"]),
+            models.Index(fields=["trigger_id"]),
+            models.Index(fields=["fieldvalue_id"]),
         ]

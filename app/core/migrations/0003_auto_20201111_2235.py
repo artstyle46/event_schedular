@@ -6,21 +6,31 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('core', '0002_auto_20201111_1929'),
+        ("core", "0002_auto_20201111_1929"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='ScheduleView',
+            name="ScheduleView",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('timestamp', models.PositiveIntegerField()),
-                ('trigger_id', models.CharField(max_length=255)),
-                ('field_id', models.CharField(max_length=255)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("timestamp", models.PositiveIntegerField()),
+                ("trigger_id", models.CharField(max_length=255)),
+                ("field_id", models.CharField(max_length=255)),
             ],
         ),
         migrations.AddIndex(
-            model_name='scheduleview',
-            index=models.Index(fields=['-timestamp'], name='core_schedu_timesta_f80ca9_idx'),
+            model_name="scheduleview",
+            index=models.Index(
+                fields=["-timestamp"], name="core_schedu_timesta_f80ca9_idx"
+            ),
         ),
     ]
