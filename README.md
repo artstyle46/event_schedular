@@ -1,6 +1,6 @@
 # event_schedular
 
-This is a lightweight event schedular for benchmarking scheduling of large number of events using redis (for storing modified data view), celery(for task scheduling) and PSQL (for storing actual data). We will also use django framework for maintaining migrations and creating tables.
+This is a lightweight event schedular for benchmarking scheduling of large number of events using redis/postgres (for storing modified data view), celery(for task scheduling) and postgres (for storing actual data). We will also use django framework for maintaining migrations and creating tables.
 
 Database relations and schema
 
